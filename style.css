@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background: #f1f1f1;
+  background: #4211a9;
   width: 90%;
   height: 90%;
   margin-top: 20px;
@@ -16,7 +16,7 @@ section{
 }
 form{
   margin: 20px auto;
-  border: 1px solid #4211a9;
+  border: 1px solid #f1f1f1;
   width: 50%;
   display: flex;
   justify-content: space-between;
@@ -45,10 +45,32 @@ input{
   gap: 10px;
 }
 #got-div {
-  border: 1px solid #4211a9;
+  border: 1px solid #f1f1f1;
+  background-color: #f1f1f1;
   width: 300px;
-  height: 300px;
+  height: 350px;
   border-radius: 10px;
+}
+#comment-section{
+  gap: 5px;
+  width: 280px;
+}
+#comment-section textarea{
+  width: 200px;
+}
+#comment-input {
+  width: 300px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #4211a9;
+}
+#comment-btn{
+  padding: 5px;
+  border: 1px solid #4211a9;
+  color: #f1f1f1;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #4211a9;
+  border-radius: 5px;
 }
 image{
   width: 80px;
@@ -57,6 +79,7 @@ image{
 h1{
   text-align: center;
   margin: 10px;
+  color: #fff;
 }
 #liked{
   border: 1px solid #ff0000;
@@ -77,6 +100,14 @@ margin-left: 20px;}
   border: 1px solid #4211a9;
   color: #4211a9;
   border-radius: 5px;
+}
+#search{
+  font-size: large;
+  transition: ease-in;
+}
+#search:hover{
+  background-color: #b448fc;
+  color: #f1f1f1;
 }
 .likes-container{
   display: flex;
