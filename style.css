@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background: #4211a9;
+  background-image: url("./images/dragon.jpg");
   width: 90%;
   height: 90%;
   margin-top: 20px;
@@ -22,10 +22,16 @@ form{
   justify-content: space-between;
   border-radius: 10px;
 }
+input{
+  outline: none;
+}
 #search{
   background-color: #4211a9;
   width: 30%;
+  outline: none;
+  border: 1px solid #4211a9;
   color: white;
+  cursor: pointer;
   border-radius: 0  10px 10px 0;
 }
 #search-bar{
@@ -61,16 +67,41 @@ input{
 #comment-input {
   width: 300px;
   outline: none;
+  padding: 5px;
   border-radius: 5px;
   border: 1px solid #4211a9;
 }
+
+#gotDivComments{
+  height: fit-content;
+  border: 1px solid #f1f1f1;
+  background-color: #f1f1f1;
+  width: 300px;
+  border-radius: 10px;
+}
+
 #comment-btn{
-  padding: 5px;
+  padding:  0 1px;
   border: 1px solid #4211a9;
   color: #f1f1f1;
   font-family: 'Courier New', Courier, monospace;
   background-color: #4211a9;
   border-radius: 5px;
+}
+
+#comments-viewer{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px auto;
+  border-radius: 5px;
+  background-color: #787871;
+}
+#comments{
+  padding: 2px;
+  font-size: medium;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 image{
   width: 80px;
@@ -118,5 +149,19 @@ margin-left: 20px;}
 .likes-container h2{
   font-size: 18px;
   font-family: 'Courier New', Courier, monospace;
+  color: #ff0000;
+}
+#delete-btn {
+  border: 1px solid #ff0010;
+  color: #ff0010;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding: 2px;
+}
+#heart{
+  width: 20px;
+  height: 20px;
   color: #ff0000;
 }

@@ -18,6 +18,9 @@ const url = `https://thronesapi.com/api/v2/Characters`
       let likes = document.createElement("h2")
       likes.textContent= likeCount;
       likeContainer.appendChild(likes)
+      let likeImage =document.createElement("img")
+      likeImage.src="./images/heart.gif"
+      likeImage.id="heart"
       let btn = document.createElement("button");
       btn.id= "like-btn"
       btn.textContent = "Like"
@@ -37,9 +40,27 @@ const url = `https://thronesapi.com/api/v2/Characters`
       commentSubmit.id = "comment-btn"
       commentSubmit.type="submit"
       commentSubmit.textContent="comment"
+      commentSubmit.addEventListener("click",(e)=>{
+        e.preventDefault()
+        gotDiv.id = "gotDivComments"
+        let commentViewer = document.createElement("div")
+        commentViewer.id ="comments-viewer"
+        let comments = document.createElement("h3")
+        comments.id="comments"
+        let deleteComment = document.createElement('button')
+        deleteComment.textContent="delete"
+        deleteComment.id="delete-btn"
+        deleteComment.addEventListener("click",()=>{
+          commentViewer.remove()
+        })
+        comments.textContent= commentInput.value
+        commentViewer.appendChild(comments)
+        commentViewer.appendChild(deleteComment)
+        gotDiv.appendChild(commentViewer)
+      })
       commentSection.appendChild(commentInput)
       commentSection.appendChild(commentSubmit)
-
+      likeContainer.appendChild(likeImage)
       likeContainer.appendChild(btn)
       gotDiv.appendChild(likeContainer)
       gotDiv.appendChild(commentSection)
@@ -50,18 +71,24 @@ const url = `https://thronesapi.com/api/v2/Characters`
       fetch(url)
       .then((res) => res.json())
       .then((characters) => {
-        displayCharacters(characters);
-
+        console.log(characters);
+  
         // Search functionality
-        document.getElementById("search").addEventListener("click", () => {
+        document.getElementById("search").addEventListener("click", (e) => {
+          e.preventDefault()
           const searchInput = document.getElementById("search-bar").value.toLowerCase();
-          const filteredCharacters = characters.filter((character) => {
-            return character.firstName.toLowerCase().includes(searchInput);
+          console.log(searchInput)
+
+          characters.forEach((character) => {
+            const characterName = character.fullName.toLowerCase();
+            if (characterName.includes(searchInput)) {
+              gotDiv.style.display = "block"; 
+            } else {
+              gotDiv.style.display = "none"; 
+            }
           });
-          displayCharacters(filteredCharacters);
         });
       })
-      .catch((err) => console.log(err));
-    })
+      })
   .catch(err => console.log(err))
 })
