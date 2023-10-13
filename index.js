@@ -12,13 +12,6 @@ const url = `https://thronesapi.com/api/v2/Characters`
       <img id="imageUrl" src=${character.imageUrl} />
       <h2>${character.fullName}</h2>`
       
-      const likeFunc =()=>{
-        btn.style.color="red"
-        btn.id="liked"
-        let newlike = likes++
-        likes.textContent=newlike
-        btn.disabled= true;
-      }
       let likeCont = document.createElement("div")
       likeCont.className="likes-container"
       let likes = document.createElement("h2")
@@ -27,7 +20,13 @@ const url = `https://thronesapi.com/api/v2/Characters`
       let btn = document.createElement("button");
       btn.id= "like-btn"
       btn.textContent = "Like"
-      btn.addEventListener("click",likeFunc)
+      btn.addEventListener("click",()=>{
+        btn.style.color="red"
+        btn.id="liked"
+        let newlike = likes++
+        likes.textContent=newlike
+        btn.disabled= true;
+      })
       likeCont.appendChild(btn)
       gotDiv.appendChild(likeCont)
       characterDiv.appendChild(gotDiv)
