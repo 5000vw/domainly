@@ -5,4 +5,48 @@
 }
 body {
   background: #f1f1f1;
+  width: 90%;
+  height: 90%;
+  margin-top: 20px;
+  margin: auto;
+}
+section{
+  display: grid;
+ 
+}
+form{
+  margin: 20px auto;
+  border: 1px solid #4211a9;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+#search{
+  background-color: #4211a9;
+  width: 30%;
+  color: white;
+  border-radius: 0  10px 10px 0;
+}
+#search-bar{
+  width: 70%;
+  font-size: large;
+  border-radius: 10px 0 0 10px;
+
+}
+input{
+  width: 40%;
+  border: none;
+  padding: 10px;
+}
+.character-div{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+#got-div {
+  border: 1px solid #4211a9;
+  width: 300px;
+  height: 300px;
+
 }
