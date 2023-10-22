@@ -4,9 +4,11 @@
   box-sizing: border-box;
 }
 body {
+  object-fit: fill;
   background-image: url("./images/dragon.jpg");
   width: 90%;
   height: 90%;
+  font-family: fantasy;
   margin-top: 20px;
   margin: auto;
 }
@@ -20,24 +22,25 @@ form{
   width: 50%;
   display: flex;
   justify-content: space-between;
-  border-radius: 10px;
 }
 input{
   outline: none;
 }
 #search{
   background-color: #4211a9;
-  width: 30%;
+  width: 25%;
   outline: none;
-  border: 1px solid #4211a9;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 15px;
   color: white;
   cursor: pointer;
-  border-radius: 0  10px 10px 0;
+  /* border-radius: 0  10px 10px 0; */
 }
 #search-bar{
-  width: 70%;
+  width: 75%;
+  padding: 15px;
   font-size: large;
-  border-radius: 10px 0 0 10px;
+  /* border-radius: 10px 0 0 10px; */
 
 }
 input{
@@ -131,14 +134,21 @@ margin-left: 20px;}
   border: 1px solid #4211a9;
   color: #4211a9;
   border-radius: 5px;
+  
+}
+.search-form{
+  border: none;
+  border-radius: 0;
 }
 #search{
   font-size: large;
-  transition: ease-in;
+  border: none;
+  transition: .5s ease-in;
 }
 #search:hover{
   background-color: #b448fc;
   color: #f1f1f1;
+  border: none;
 }
 .likes-container{
   display: flex;
